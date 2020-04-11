@@ -1,0 +1,14 @@
+{
+    "name" : "Comment Analyzer for YouTube",
+    "version" : "0.1.0",
+    "description" : "To analyze youtube comments from an active tab",
+    "permissions" : ["storage","declarativeContent"],
+    "background" : {
+        "scripts": ["background.js"],
+        "persistent" : false
+    },
+    "page_action" : {
+        "default_popup" : "index.html"
+    },
+    "manifest_version":2
+}
