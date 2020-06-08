@@ -4,7 +4,7 @@ from sklearn import metrics
 import pickle
 from trainer import extract_words
 
-def loader():
+def loader(sentences):
 
     # Load All Reviews in train and test datasets
     f = open('train.pkl', 'rb')
@@ -50,12 +50,11 @@ def loader():
 #         else:
 #             print("----negative")
 
-def naive_predict(sentence):
-    sentences = []
-    sentences.append(sentence)
+    # sentences = []
+    # sentences.append(sentence)
     input_features = vectorizer.transform(extract_words(sentences))
     prediction = nb.predict(input_features)
     if prediction[0] == 1 :
-        return "positive"
+        return 1
     else:
-        return "negative"
+        return 0
